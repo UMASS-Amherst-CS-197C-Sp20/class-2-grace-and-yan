@@ -9,9 +9,26 @@ void print_stats(double *entries, int length) {
   double max = 0;
   double min = 0;
   double stddev = 0;
+  min = entries[0];
+
   for (int i=0; i<length; i++) {
     sum += entries[i];
+    if (max < entries[i]){
+       max = entries[i];
+    }
+    if (min > entries[i]){
+       min = entries[i];
+    }
+    
+    
   }
+  
+  mean = sum/length;
+  
+
+
+
+
   printf("\tN=%d\n", length);
   printf("\tsum=%lf\n", sum);
   printf("\tmean=%lf\n", mean);
