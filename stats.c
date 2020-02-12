@@ -77,7 +77,11 @@ int main(void) {
       }
     }
     // TODO: print all the items entered here:
-       printf("0");
+       for(int i = 0; i< filled; i++){
+       printf("input[%d] is %lf. \n", i+1, entries[i]);
+	
+      }
+
   }
 }
 
