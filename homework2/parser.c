@@ -22,26 +22,37 @@
 //floats go in floats.txt
 
 //CODE BEGINS HERE
-
+#include <stdio.h>
 //include fprintf and fscanf
-
 //begin your main function
-
+main(){
+  FILE *intsf;
+  FILE *charsf;
+  FILE *floatsf;
+  intsf = fopen("ints.txt","w+");
+  charsf = fopen("chars.txt","w+");
+  floatsf = fopen("floatsf.txt","w+");
 //open ints.txt, chars.txt, and floats.txt for writing
 //open input.txt for reading
 //don't forget that the file access mode is different for each!
-
+  FILE *inputf;
+  inputf = fopen("input.txt","r+");
 //create a char variable to hold the flags you read	
-
+  char flag[255];
 //create an int, char, and float variable to hold the int, char, and float values you read
-
+  int intvalue;
+  char charvalue;
+  float floatvalue;
 //while fscanf does not return an EOF error
 //read in a flag from input.txt
-
+  while(fscanf(inputf,"%s",flag) != EOF){
+    fgets(flag,255,(FILE*)inputf);
+  }
 //if it stands for an int
 //read an int from input.txt
 //write the int to ints.txt
-
+   
+      
 //if it stands for a char
 //read a char from input.txt
 //write the char to chars.txt
@@ -51,4 +62,6 @@
 //write the float to floats.txt
 
 //once fscanf returns and EOF error return a successful exit status
+return 0;
+}
 
