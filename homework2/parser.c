@@ -1,4 +1,3 @@
-
 //INSTRUCTIONS
 //Your parser will read from input.txt
 //input.txt consists of a series inputs that you need to read.
@@ -50,16 +49,16 @@ main(){
   while(fscanf(inputf,"%s",flag) != EOF){
     fgets(flag,255,(FILE*)inputf);
 
-    if (flag[count] == "I"){
+    if (flag == "I"){
       fscanf(inputf, "%d", intvalue);
       fprintf(intsf, "%d", intvalue);
     }
-    if (flag[count] == "C"){
+    if (flag == "C"){
       fscanf(inputf, "%s", charvalue);
       fprintf(charsf, "%s", charvalue);   
     }
 
-    if (flag[count] == "F"){
+    if (flag == "F"){
       fscanf(inputf, "%d", floatvalue);
       fprintf(floatsf, "%d", floatvalue);
 
