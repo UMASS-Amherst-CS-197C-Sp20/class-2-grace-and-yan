@@ -6,13 +6,15 @@
 //I means int, C means char, F means float.
 
 //So for example
+<<<<<<< HEAD
 
 //I 7963467
+=======
+//I 7963467 
+>>>>>>> 05da435234133cb39d335f3cd3c88081bbc6cffd
 //means int 7963467
-
 //C H
 //means char H
-
 //F 0.7896
 //means float 0.7896
 
@@ -40,6 +42,7 @@ int main()
   inputf = fopen("input.txt", "r+");
   //create a char variable to hold the flags you read
   char flag[255];
+<<<<<<< HEAD
   //create an int, char, and float variable to hold the int, char,
   //and float values you read
   int intvalue[255];
@@ -94,4 +97,59 @@ int main()
   //once fscanf returns and EOF error return a successful exit
   //status
   return 0;
+=======
+//create an int, char, and float variable to hold the int, char, and float values you read
+  int intvalue;
+  char * charvalue;
+  float floatvalue;
+  int strcmpI;
+  int strcmpC;
+  int strcmpF;
+
+//while fscanf does not return an EOF error
+//read in a flag from input.txt
+  while(fscanf(inputf,"%s",flag) != EOF){
+    fgets(flag,255,(FILE*)inputf);
+    strcmpI = strcmp(flag, "I");
+    strcmpC = strcmp(flag, "C");
+    strcmpF = strcmp(flag, "F");
+
+
+    if (strcmpI == 0){
+      fscanf(inputf, "%d", intvalue);
+      fprintf(intsf, "%d", intvalue);
+    }
+    if (strcmpC == 0){
+      fscanf(inputf, "%s", charvalue);
+      fprintf(charsf, "%s", charvalue);   
+    }
+
+    if (strcmpF == 0){
+      fscanf(inputf, "%f", floatvalue);
+      fprintf(floatsf, "%f", floatvalue);
+
+    }
+  }
+//if it stands for an int
+//read an int from input.txt
+//write the int to ints.txt
+   
+
+      
+//if it stands for a char
+//read a char from input.txt
+//write the char to chars.txt
+
+
+
+//if it stands for a float
+//read a float from input.txt
+//write the float to floats.txt
+
+
+
+
+//once fscanf returns and EOF error return a successful exit status
+return 0;
+>>>>>>> 05da435234133cb39d335f3cd3c88081bbc6cffd
 }
