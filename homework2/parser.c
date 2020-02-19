@@ -6,13 +6,10 @@
 //I means int, C means char, F means float.
 
 //So for example
-
 //I 7963467 
 //means int 7963467
-
 //C H
 //means char H
-
 //F 0.7896
 //means float 0.7896
 
@@ -41,26 +38,33 @@ main(){
   char flag[255];
 //create an int, char, and float variable to hold the int, char, and float values you read
   int intvalue;
-  char charvalue;
+  char * charvalue;
   float floatvalue;
-  int count = 0;
+  int strcmpI;
+  int strcmpC;
+  int strcmpF;
+
 //while fscanf does not return an EOF error
 //read in a flag from input.txt
   while(fscanf(inputf,"%s",flag) != EOF){
     fgets(flag,255,(FILE*)inputf);
+    strcmpI = strcmp(flag, "I");
+    strcmpC = strcmp(flag, "C");
+    strcmpF = strcmp(flag, "F");
 
-    if (flag == "I"){
+
+    if (strcmpI == 0){
       fscanf(inputf, "%d", intvalue);
       fprintf(intsf, "%d", intvalue);
     }
-    if (flag == "C"){
+    if (strcmpC == 0){
       fscanf(inputf, "%s", charvalue);
       fprintf(charsf, "%s", charvalue);   
     }
 
-    if (flag == "F"){
-      fscanf(inputf, "%d", floatvalue);
-      fprintf(floatsf, "%d", floatvalue);
+    if (strcmpF == 0){
+      fscanf(inputf, "%f", floatvalue);
+      fprintf(floatsf, "%f", floatvalue);
 
     }
   }
