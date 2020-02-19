@@ -16,9 +16,27 @@ int main(void) {
   FILE* out = fopen("fizzbuzz.txt", "w");
   // Demonstrate file I/O.
   fprintf(out, "This doesn't work yet!\n");
-
-  // We need to close the file we're writing to, otherwise we may lose data.
-  fclose(out);
-  // Tell the shell/terminal that we were successful.
-  return 0;
+  int n = 0;
+    int fizznumber = 3;
+    int buzznumber = 5;
+    while (n <= N){
+        if (n % fizznumber == 0 && n % buzznumber == 0){
+            fputs("FizzBuzz ",out);
+            n++;
+            continue;
+        }
+        if (n % fizznumber == 0){
+            fputs("Fizz ",out);
+        }else if (n % buzznumber == 0){
+            fputs("Buzz ",out);
+        }else{
+            char ch = (char)n;
+            fprintf(out,"%d ",ch);
+        }
+        n++;
+    }
+    // We need to close the file we're writing to, otherwise we may lose data.
+    fclose(out);
+    // Tell the shell/terminal that we were successful.
+    return 0;
 }
